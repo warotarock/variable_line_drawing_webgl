@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>Variable shickness line drawing in WebGL</title>
+    <script src="./external/glmatrix/gl-matrix-min.js"></script>
+
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="./src/conversion.js"></script>
+    <script src="./src/webgl_helper.js"></script>
+    <script src="./src/app.js"></script>
+    <style>
+
+        html {
+            margin: 0;
+            left: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        header {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 0px;
+            height: 80px;
+            text-align: left;
+            padding-top: 12px;
+            font-size: 20px;
+        }
+
+        main {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 85px;
+            bottom: 48px;
+        }
+
+        footer {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            height: 40px;
+            bottom: 0px;
+        }
+
+        div#mainCanvasWindow {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            border: solid;
+            border-width: 1px;
+        }
+
+        canvas#mainCanvas {
+            position: absolute;
+            border: none;
+            z-index: 2;
+        }
+
+        canvas#displayCanvas {
+            position: absolute;
+            border: none;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        ボクの考えた途中で太さの変わる線の描画　～Variable shickness line drawing in WebGL～<br />
+        <input type="button" id="editPointTarget" value="操作点の切り替え">
+        <input type="button" id="hidePoints" value="制御点を表示">
+        <input type="button" id="stressTest" value="負荷テスト開始">
+    </header>
+    <main>
+        <div id="mainCanvasWindow">
+            <canvas id="mainCanvas"></canvas>
+            <canvas id="displayCanvas"></canvas>
+        </div>
+    </main>
+    <footer>
+        By Kashiwazaki Warotaro - WebGL Advent Calendar 2018 11th Day
+    </footer>
+</body>
+</html>
